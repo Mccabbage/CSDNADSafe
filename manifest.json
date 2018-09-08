@@ -1,0 +1,38 @@
+{
+"name": "CSDN ADSafe",
+"version": "0.0.1",
+"manifest_version": 2,
+// 简单描述
+"description": "去除CSDN广告",
+"icons": {
+"16": "images/AD.png"
+},
+// 浏览器小图表部分
+"browser_action": {
+"default_title": "去除CSDN广告",
+"default_icon": "images/AD.png",
+"default_popup": "html/calc.html"
+},
+// 引入脚本，content script 是运行在一个被称为isolated world 的运行环境里，
+// 和页面上的脚本互不干扰，因为不在一个运行环境里，所以也无法调用页面上脚本定义的方法了
+"content_scripts": [
+{
+"js": ["scripts/include.js"],
+// 满足什么条件下使用该脚本
+"matches": [
+//"http://*/*",
+//"https://*/*"
+"http://*.csdn.net/*",
+"https://*.csdn.net/*"
+],
+// 什么情况下运行【指定文档何时加载脚本 document_start\document_end\document_idel】
+"run_at": "document_end"
+}
+],
+// 应用协议页面
+"permissions": [
+"http://*/*",
+"https://*/*"
+],
+"content_security_policy": "script-src 'self'; object-src 'self'"
+}

@@ -1,0 +1,1 @@
+document.getElementsByTagName("aside")[0].children[1].style.display="none"
