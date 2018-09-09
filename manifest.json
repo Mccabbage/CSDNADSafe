@@ -23,7 +23,8 @@
 //"http://*/*",
 //"https://*/*"
 "http://*.csdn.net/*",
-"https://*.csdn.net/*"
+"https://*.csdn.net/*",
+"https://bbs.csdn.net/"
 ],
 // 什么情况下运行【指定文档何时加载脚本 document_start\document_end\document_idel】
 "run_at": "document_end"
